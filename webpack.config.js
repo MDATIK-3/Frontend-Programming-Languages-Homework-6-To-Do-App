@@ -3,6 +3,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = (_, argv) => {
   const isProduction = argv.mode === "production";
+  const devServerPort = process.env.PORT ? Number(process.env.PORT) : "auto";
 
   return {
     entry: "./src/index.tsx",
@@ -34,7 +35,7 @@ module.exports = (_, argv) => {
       })
     ],
     devServer: {
-      port: 3000,
+      port: devServerPort,
       open: true,
       hot: true,
       static: {

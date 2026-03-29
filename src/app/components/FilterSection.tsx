@@ -9,17 +9,19 @@ export function FilterSection({ taskFilters, onTaskFiltersChange }: FilterSectio
   return (
     <fieldset className="mb-3 rounded-none border border-slate-500 px-2.5 pb-2.5 pt-2">
       <legend className="px-1">Filter</legend>
-      <div className="mb-1.5 flex items-center gap-1.5">
+      <div className="mb-1.5 flex flex-col gap-1.5 sm:flex-row sm:items-center">
+        <label className="flex items-center gap-1.5" htmlFor="showCompleted">
+          <input
+            className="h-4 w-4 accent-slate-700"
+            checked={taskFilters.showCompleted}
+            id="showCompleted"
+            type="checkbox"
+            onChange={(event) => onTaskFiltersChange("showCompleted", event.target.checked)}
+          />
+          Show completed
+        </label>
         <input
-          className="h-4 w-4 accent-slate-700"
-          checked={taskFilters.showCompleted}
-          id="showCompleted"
-          type="checkbox"
-          onChange={(event) => onTaskFiltersChange("showCompleted", event.target.checked)}
-        />
-        <label htmlFor="showCompleted">Show completed</label>
-        <input
-          className="border border-slate-400 px-1 py-0.5 outline-none focus:border-slate-600"
+          className="w-full border border-slate-400 px-1 py-0.5 outline-none focus:border-slate-600 sm:w-auto"
           id="filterFrom"
           title="Date From"
           type="date"
@@ -27,7 +29,7 @@ export function FilterSection({ taskFilters, onTaskFiltersChange }: FilterSectio
           onChange={(event) => onTaskFiltersChange("from", event.target.value)}
         />
         <input
-          className="border border-slate-400 px-1 py-0.5 outline-none focus:border-slate-600"
+          className="w-full border border-slate-400 px-1 py-0.5 outline-none focus:border-slate-600 sm:w-auto"
           id="filterTo"
           title="Date To"
           type="date"

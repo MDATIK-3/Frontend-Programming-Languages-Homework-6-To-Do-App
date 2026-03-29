@@ -2,14 +2,14 @@
   "name": "todo-app",
   "version": "1.0.0",
   "private": true,
-  "dependencies": {
-    "react": "^19.2.0",
-    "react-dom": "^19.2.0"
-  },
   "scripts": {
     "dev": "webpack serve --mode development",
     "start": "npm run dev",
     "build": "webpack --mode production"
+  },
+  "dependencies": {
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4"
   },
   "devDependencies": {
     "@types/react": "^19.2.14",
@@ -21,16 +21,10 @@
     "postcss-loader": "7.3.4",
     "style-loader": "3.3.4",
     "tailwindcss": "3.4.19",
-    "@types/react": "^19.2.2",
-    "@types/react-dom": "^19.2.2",
     "ts-loader": "9.5.4",
     "typescript": "5.9.3",
     "webpack": "5.105.4",
     "webpack-cli": "5.1.4",
     "webpack-dev-server": "4.15.2"
-  },
-  "dependencies": {
-    "react": "^19.2.4",
-    "react-dom": "^19.2.4"
   }
 }

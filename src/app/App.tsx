@@ -92,21 +92,23 @@ export function App() {
   }
 
   return (
-    <main className="min-h-screen bg-white p-4 text-[13px] text-slate-900 [font-family:Arial,sans-serif]">
-      <AddTaskForm
-        errorMessage={errorMessage}
-        taskDraft={taskDraft}
-        titleInputRef={titleInputRef}
-        onSubmit={handleTaskSubmit}
-        onTaskDraftChange={updateTaskDraft}
-      />
-      <FilterSection taskFilters={taskFilters} onTaskFiltersChange={updateTaskFilters} />
-      <TaskTable
-        sortState={sortState}
-        tasks={visibleTasks}
-        onSort={handleSort}
-        onToggleDone={handleToggleDone}
-      />
-    </main>
+    <div className="flex min-h-screen items-center justify-center bg-slate-100 px-3 py-4 sm:px-5 sm:py-8">
+      <main className="w-full max-w-6xl rounded-md bg-white p-3 text-[13px] text-slate-900 shadow-sm sm:p-5 [font-family:Arial,sans-serif]">
+        <AddTaskForm
+          errorMessage={errorMessage}
+          taskDraft={taskDraft}
+          titleInputRef={titleInputRef}
+          onSubmit={handleTaskSubmit}
+          onTaskDraftChange={updateTaskDraft}
+        />
+        <FilterSection taskFilters={taskFilters} onTaskFiltersChange={updateTaskFilters} />
+        <TaskTable
+          sortState={sortState}
+          tasks={visibleTasks}
+          onSort={handleSort}
+          onToggleDone={handleToggleDone}
+        />
+      </main>
+    </div>
   );
 }
